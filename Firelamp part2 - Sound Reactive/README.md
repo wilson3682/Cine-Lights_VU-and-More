@@ -1,3 +1,17 @@
+# Cine-Lights
+# https://www.youtube.com/watch?v=oFEkNULnkzk
+I decided to follow up a small request to convert my previous fire lamp etc to a frame... 
+
+it did not start to well... but worked out in the end.. for build instructions see my lamp videos, as the build is the same..  requires a lot of leds, based around the teensy 3.2 and a msgeq7 breakout board. new code listed below...
+
+Link to modustrial Makers channel and video : https://www.youtube.com/watch?v=X1bEg...
+
+Link to new code for this project : https://drive.google.com/open?id=1gsA...
+
+Main code credit to Jason Coon... 
+
+Music: C-BooL - DJ Is Your Second Name
+
 # Torch
 Cylindrical light art display.
 
