@@ -1,0 +1,18 @@
+Hi,  Thanks for visiting my youtube page.  Here is my code for my stereo vu meter and some basic
+instructions on the build.
+
+I would highly recommend using an arduino mega, using an arduino uno you may find memory issues.
+Im using ws2812b leds which are 5v leds. if you are using 10 or so then using 5v from the arduinoi is fine
+if using more then would suggest a 5v - 4 amp power supply.
+
+To wire all up. each led strip requires 5v, ground, and data. so 5v from the power supply to each strip and to arduino vin pin.. ground from power supply  to arduino, and ground from the arudino to each led strip. Left strip data is digital pin 5 on arduino. right strip is digital pin 6 on arduino. momentary button, is ground on arduino and digital pin 0.  
+
+depending on audio source. from a headphone lead or socket. both will share the same ground, this will go to ground on the arduino.  left positive signal goes to analogue pin A4. and right positive to A5.
+
+you will also need both fastled library and the neopixel library installed.
+
+any problems, then feel free to email me.
+
+regards
+
+manny.

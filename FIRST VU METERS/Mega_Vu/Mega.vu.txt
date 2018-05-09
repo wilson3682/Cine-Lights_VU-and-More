@@ -1,0 +1,21 @@
+Hi, Please find attached my vu meter code. Due to quite a few requests it can been cleaned up a little and has a few changes. there are still 4 vu patterns, 2 from bottom to top, and 2 from center outwards, and 8 standby patterns. The vu meter is being upgraded with new hardware and code, so please subscribe so you will be notified when the new code is ready.
+
+This will only work on a mega, Due to memory constraints. if you are using a arduino uno then please see my other code. 
+You will need both fastled library and the neopixel library installed.
+
+The led strip used is a WS2812B. These are 5v volt leds. So you can take 5v and ground from the Arduino, and data pin into digital pin 6 if using 10 or so leds.  If using anymore then i would recommend using a separate power supply.  I run all of mine off a 5v 4amp power supply without any problems.
+
+using a power supply.  5v from power supply to arduino Vin and to 5v to led strip
+ground from power supply to arduino ground and led ground. (all ground must share the same ground, very important )
+leds  data to arduino digital pin 6.
+momentary push button is ground and digital pin 4
+microphone is analogue pin 5,  (A5)
+
+i have tried many microphones, especially ones from china, and they do not work very well.. 
+i would highly recommend what i use. https://www.adafruit.com/products/1063
+
+to setup this microphone, or any other microphone. use 3.3v for power for microphone from arduino, and the same 3.3v to aref on the arduino.  ground to ground, signal output to A5.
+
+If you need any further help, feel free to ask
+
+regards 
