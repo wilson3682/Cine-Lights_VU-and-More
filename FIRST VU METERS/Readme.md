@@ -1,5 +1,5 @@
-#Cine-Lights
-#https://www.youtube.com/watch?v=W8ye2O8ZQPM
+# Cine-Lights
+# https://www.youtube.com/watch?v=W8ye2O8ZQPM
 
 A ws2812b vu meter.  72 leds from a 144 led meter strip, and an arduino uno, and microphone. 
 
