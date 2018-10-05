@@ -9,9 +9,12 @@ Thanks Cine-Lights for all your Work and Effort.
 
 Hi Cine-Lights I think I found the problem in the code having issues with the new versions of Arduino ide.
 The problem I found was with the Juggle effect.
-I changed it to the following code from: 
+I changed it to the following code from:
+
 https://github.com/FastLED/FastLED/blob/master/examples/DemoReel100/DemoReel100.ino
+
 The original code came I believe from:
+
  https://codebender.cc/sketch:91857#FastLed%20Juggle.ino
 and the code works fine by itself.
 The only thing that was causing the problem was the missing -1 at the end of NUM_LEDS.
