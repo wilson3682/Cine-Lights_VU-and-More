@@ -246,8 +246,7 @@ switch (buttonPushCounter){
 
          case 11:
      buttonPushCounter==11; {
-      Twinkle();
-     //Drip(); 
+     Drip(); 
       break;}  
       
       } 
