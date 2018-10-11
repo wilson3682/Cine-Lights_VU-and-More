@@ -1,4 +1,3 @@
-
     #include <Adafruit_NeoPixel.h>
     #include <FastLED.h>
     #include "water_torture.h"
@@ -16,7 +15,7 @@
     #define FRAMES_PER_SECOND 60
     #define NUM_BALLS         3                 // Number of bouncing balls you want (recommend < 7, but 20 is fun in its own way)
     #define GRAVITY           -9.81              // Downward (negative) acceleration of gravity in m/s^2
-    #define h0                1                  // Starting height, in meters, of the ball (strip length)
+    #define h0                1                 // Starting height, in meters, of the ball (strip length)
     #if FASTLED_VERSION < 3001000
     #error "Requires FastLED 3.1 or later; check github for latest code."
     #endif
@@ -247,7 +246,8 @@ switch (buttonPushCounter){
 
          case 11:
      buttonPushCounter==11; {
-     Drip(); 
+      Twinkle();
+     //Drip(); 
       break;}  
       
       } 
@@ -492,8 +492,8 @@ uint32_t Wheel(byte WheelPos, float opacity) {
 void sinelon() {
   // a colored dot sweeping back and forth, with fading trails
   fadeToBlackBy( leds, N_PIXELS, thisfade);
-  int pos1 = beatsin16(thisbeat,0,N_PIXELS);
-  int pos2 = beatsin16(thatbeat,0,N_PIXELS);
+  int pos1 = beatsin16(thisbeat,0,N_PIXELS-1);                         //<<<===============================Fix Applied===============================
+  int pos2 = beatsin16(thatbeat,0,N_PIXELS-1);                         //<<<===============================Fix Applied===============================
     leds[(pos1+pos2)/2] += CHSV( myhue++/64, thissat, thisbri);
 }
 // Pattern 3 - JUGGLE
@@ -508,7 +508,7 @@ void juggle() {                                               // Several colored
   curhue = thishue;                                          // Reset the hue values.
   fadeToBlackBy(leds, N_PIXELS, faderate);
   for( int i = 0; i < numdots; i++) {
-    leds[beatsin16(basebeat+i+numdots,0,N_PIXELS)] += CHSV(curhue, thissat, thisbright);   //beat16 is a FastLED 3.1 function
+    leds[beatsin16(basebeat+i+numdots,0,N_PIXELS-1)] += CHSV(curhue, thissat, thisbright);   //beat16 is a FastLED 3.1 function        //<<<===============================Fix Applied===============================
     curhue += hueinc;
   }
 } // juggle()
@@ -582,9 +582,9 @@ void blur() {
   uint8_t blurAmount = dim8_raw( beatsin8(3,64, 192) );       // A sinewave at 3 Hz with values ranging from 64 to 192.
   blur1d( leds, N_PIXELS, blurAmount);                        // Apply some blurring to whatever's already on the strip, which will eventually go black.
   
-  uint8_t  i = beatsin8(  9, 0, N_PIXELS);
-  uint8_t  j = beatsin8( 7, 0, N_PIXELS);
-  uint8_t  k = beatsin8(  5, 0, N_PIXELS);
+  uint8_t  i = beatsin8(  9, 0, N_PIXELS-1); //<<<===============================Fix Applied===============================
+  uint8_t  j = beatsin8( 7, 0, N_PIXELS-1);  //<<<===============================Fix Applied===============================
+  uint8_t  k = beatsin8(  5, 0, N_PIXELS-1); //<<<===============================Fix Applied===============================
   
   // The color of each point shifts over time, each at a different speed.
   uint16_t ms = millis();  
@@ -659,6 +659,7 @@ bool cycle()
 // List of patterns to cycle through.  Each is defined as a separate function below.
 typedef void (*SimplePatternList[])();
 SimplePatternList gPatterns = {ripple, ripple2, Twinkle, pattern2, pattern3, blur, Balls, fire, Drip};
+
 uint8_t gCurrentPatternNumber = 0; // Index number of which pattern is current
 
 void nextPattern()
